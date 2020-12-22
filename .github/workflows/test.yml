@@ -11,7 +11,7 @@ jobs:
       - name: set envioronment variables
         id: env_var
         run: |
-          VERSION=v4.0.1 | cut -f2 -d"v"
+          VERSION=echo "v4.0.1" | cut -f2 -d"v"
           echo ::set-output name=NEW_VERSION::$(echo $VERSION)
 
       # Runs a set of commands using the runners shell
