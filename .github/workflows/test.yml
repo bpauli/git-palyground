@@ -11,9 +11,10 @@ jobs:
       - name: set envioronment variables
         id: env_var
         run: |
-          echo ::set-output name=VERSION::$(echo "v4.0.1")
+          VERSION=v4.0.1
+          echo ::set-output name=NEW_VERSION::$(echo $VERSION)
 
       # Runs a set of commands using the runners shell
       - name: output variables
         run: |
-          echo ${{ steps.env_var.outputs.VERSION }}
+          echo ${{ steps.env_var.outputs.NEW_VERSION }}
